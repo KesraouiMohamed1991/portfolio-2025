@@ -62,7 +62,7 @@ export default function ContactPage() {
             className="min-h-screen  text-white py-20 px-4">
             <div className="max-w-2xl mx-auto space-y-12">
                 <div className="space-y-2 text-center">
-                    <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
+                    <h1 className="text-4xl font-[frelon-demo] sm:text-5xl font-bold tracking-tight">
                         Let’s work together
                     </h1>
                     <p className="text-slate-400 max-w-md mx-auto">

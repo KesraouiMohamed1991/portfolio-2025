@@ -2,9 +2,11 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
+
+
 function Footer() {
     return (
-        <footer className="flex items-center justify-between w-full max-w-4xl mx-auto px-4 py-6 border-t border-gray-800">
+        <footer className="flex  items-center justify-between w-full max-w-4xl mx-auto px-4 py-6 border-t border-gray-800">
             <p className="text-sm text-slate-400">
                 &copy; Kesraoui Mohamed, France
             </p>

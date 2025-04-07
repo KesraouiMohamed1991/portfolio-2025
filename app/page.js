@@ -1,8 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion } from "motion/react"
-import Transition from '../lib/Transition'
+import { motion } from "motion/react";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -10,26 +9,19 @@ export default function Home() {
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
-
     if (!email) {
       setStatus("Please enter a valid email address.");
       return;
     }
-
     try {
       const res = await fetch("/api/newsletter", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-
       if (res.ok) {
-        console.log("Subscription successful");
         setStatus("Successfully subscribed! Check your inbox.");
       } else {
-        console.log("Subscription failed");
         setStatus("Something went wrong. Please try again.");
       }
     } catch (error) {
@@ -37,19 +29,15 @@ export default function Home() {
     }
   };
 
-  // Image filenames
-  const images = Array.from({ length: 8 }, (_, index) => `/0${index + 1}.jpeg`);
+  // 🎮 Retro Game Logic (Pong style)
+
 
   return (
-
-    <main className="font-mono flex flex-col sm:my-32 min-h-screen w-full text-white">
-      {/* Header */}
-
-      {/* Content */}
+    <main className="font-mono flex flex-col sm:my-24 h-screen w-full text-white">
       <section className="flex flex-col max-w-4xl mx-auto px-4 my-8 space-y-8">
         <div>
           <h1 className="text-3xl sm:text-4xl font-bold">
-            Hello <span className="animate-shake">✌🏻</span>, I&apos;m Kesraoui Mohamed
+            Hello <span className="animate-shake">✌🏻</span>, I&apos;m <span className="font-[frelon-demo]">Kesraoui Mohamed</span>
           </h1>
           <p className="text-slate-300 mt-2">Frontend developer based in France. I&apos;ve been building for the web since 2021.</p>
         </div>
@@ -58,12 +46,9 @@ export default function Home() {
           <h2 className="text-lg font-semibold">Now</h2>
           <p className="text-slate-300 mt-2">
             I&apos;m building a micro SaaS, mentoring at a bootcamp in Marseille called{" "}
-            <span className="font-semibold hover:underline">
-              <Link target="_blank" href="https://www.lacapsule.academy/">
-                La Capsule
-              </Link>
-            </span>
-            , and consulting to help companies create better websites and web apps.
+            <Link target="_blank" href="https://www.lacapsule.academy/" className="font-semibold hover:underline">
+              La Capsule
+            </Link>, and consulting to help companies create better websites and web apps.
           </p>
         </div>
 
@@ -89,26 +74,6 @@ export default function Home() {
           {status && <p className="text-slate-300 mt-4">{status}</p>}
         </div>
 
-        {/* Bento Grid - Gallery of Images */}
-        <div>
-          <h2 className="text-lg font-semibold">Gallery</h2>
-          <p className="text-slate-300 mt-2">A collection of my favorite photos from my travels and daily life.</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-            {images.map((image, index) => (
-              <div key={index} className="overflow-hidden rounded-lg">
-                <motion.img
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  src={`/images/${image}`}
-                  alt={`Image ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
         <div>
           <h2 className="text-lg font-semibold">Connect</h2>
           <p className="text-slate-300 mt-2">
@@ -121,7 +86,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+
+
     </main>
   );
 }

@@ -19,6 +19,17 @@
   }
 }
 
+
+
+
+@font-face {
+  font-family: 'frelon-demo';
+
+       
+  src: url('/fonts/frelon-demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   background: var(--background);
   color: var(--foreground);

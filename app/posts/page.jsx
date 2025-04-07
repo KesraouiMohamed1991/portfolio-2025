@@ -1,42 +1,42 @@
 'use client';
+
 import { motion } from "framer-motion";
 import Transition from '../../lib/Transition';
 
-export default function ExperiencePage() {
+export default function PostsPage() {
     const textVariant = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
     };
 
-    const experiences = [
+    const posts = [
         {
-            title: "Developer & Mentor – La Capsule",
-            period: "Oct 2023 – Present",
+            title: "How I Built a Photography Portfolio with Next.js",
+            date: "March 10, 2024",
             description:
-                "Leading fullstack web development bootcamps, mentoring students on JavaScript, React, Node.js, MongoDB, and helping them build real-world projects.",
+                "From dynamic routes to optimized images, here's how I built a fast, visually striking site to showcase my photography work.",
         },
         {
-            title: "Frontend Developer – MistralTips",
-            period: "2023 - 2024 ",
+            title: "Teaching Code at La Capsule: What I Learned",
+            date: "February 27, 2024",
             description:
-                "Creating a mobile app (MVP) for resturants and cafes. Collaborating with a team of developers to deliver a user-friendly experience.",
+                "Mentoring fullstack students daily has taught me more about JavaScript, people, and teaching than I ever expected.",
         },
         {
-            title: "Frontend Developer – Freelance",
-            period: "2022 – Present",
+            title: "React Transitions That Actually Feel Good",
+            date: "January 18, 2024",
             description:
-                "Building modern, responsive websites for startups and personal clients. Specialized in React, Next.js, Tailwind CSS, and performance optimization.",
+                "Exploring smooth page transitions, shared layouts, and UX-focused animation strategies in React and Framer Motion.",
         },
         {
-            title: "Photographer – Kesraoui Photography",
-            period: "2019 – Present",
+            title: "Capturing Marseille Through My Lens",
+            date: "December 05, 2023",
             description:
-                "Street and landscape photography across Algeria and France. Published works and exhibitions in Marseille. Personal creative outlet.",
+                "A personal photo series of Marseille. Walking the streets with nothing but a lens and time to kill.",
         },
     ];
 
     return (
-
         <main className="min-h-screen text-white py-20 px-4">
             <div className="max-w-3xl mx-auto space-y-12">
                 <motion.div
@@ -46,14 +46,14 @@ export default function ExperiencePage() {
                     viewport={{ once: true }}
                     variants={textVariant}
                 >
-                    <h1 className="text-4xl font-[frelon-demo] sm:text-5xl font-bold tracking-tight">Experience</h1>
+                    <h1 className="text-4xl font-[frelon-demo] sm:text-5xl font-bold tracking-tight">Posts</h1>
                     <p className="text-slate-400 max-w-xl mx-auto">
-                        From teaching bootcamps to building client websites, here's a look at my journey.
+                        Writings about code, creativity, and photography.
                     </p>
                 </motion.div>
 
                 <div className="space-y-10">
-                    {experiences.map((exp, index) => (
+                    {posts.map((post, index) => (
                         <motion.div
                             key={index}
                             className="border-l-4 border-green-500 pl-6 relative"
@@ -63,9 +63,9 @@ export default function ExperiencePage() {
                             variants={textVariant}
                         >
                             <div className="absolute -left-2.5 -top-1 w-4 h-4 bg-green-500 rounded-full"></div>
-                            <h3 className="text-xl font-semibold">{exp.title}</h3>
-                            <span className="text-sm text-slate-400">{exp.period}</span>
-                            <p className="text-slate-300 mt-2">{exp.description}</p>
+                            <h3 className="text-xl font-semibold">{post.title}</h3>
+                            <span className="text-sm text-slate-400">{post.date}</span>
+                            <p className="text-slate-300 mt-2">{post.description}</p>
                         </motion.div>
                     ))}
                 </div>
@@ -77,9 +77,9 @@ export default function ExperiencePage() {
                     viewport={{ once: true }}
                     variants={textVariant}
                 >
-                    Curious to work with me?{" "}
+                    Want more?{" "}
                     <a href="/contact" className="text-green-400 hover:underline">
-                        Let’s talk
+                        Let’s connect
                     </a>.
                 </motion.div>
             </div>

@@ -11,9 +11,10 @@ function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const links = [
-        { href: "/contact", label: "Contact" },
         { href: "/about", label: "About" },
         { href: "/experience", label: "Experience" },
+        { href: "/contact", label: "Contact" },
+        { href: "/posts", label: "Posts" },
     ];
 
 
@@ -64,7 +65,7 @@ function Header() {
                         stroke="currentColor"
                         strokeWidth={1.5}
                     >
-                        <path strokeLinecap="round" strokeLinejoin="round" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                        <path strokeLinecap="round" strokeLinejoin="round" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h13M4 18h16"} />
                     </svg>
                 </button>
             </div>
