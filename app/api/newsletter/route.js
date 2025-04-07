@@ -19,12 +19,12 @@ export async function POST(req) {
         await connect();
 
         // Save the newsletter subscription in the Message collection
-        const newsletterMessage = new Message({
-            name: "Newsletter",
-            email,
-            message: "Subscribed to newsletter",
-        });
-        await newsletterMessage.save();
+        // const newsletterMessage = new Message({
+        //     name: "Newsletter",
+        //     email,
+        //     message: "Subscribed to newsletter",
+        // });
+        // await newsletterMessage.save();
 
         // Save the email in the Newsletter collection
         const emailEntry = new Newsletter({ email });

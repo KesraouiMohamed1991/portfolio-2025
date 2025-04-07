@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react"
+import Transition from '../lib/Transition'
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -40,6 +41,7 @@ export default function Home() {
   const images = Array.from({ length: 8 }, (_, index) => `/0${index + 1}.jpeg`);
 
   return (
+
     <main className="font-mono flex flex-col sm:my-32 min-h-screen w-full text-white">
       {/* Header */}
 

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Transition from "../../lib/Transition";
 
 export default function ContactPage() {
     const [name, setName] = useState("");

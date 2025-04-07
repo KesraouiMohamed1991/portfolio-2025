@@ -1,5 +1,6 @@
 'use client';
 import { motion } from "framer-motion";
+import Transition from '../../lib/Transition';
 
 export default function ExperiencePage() {
     const textVariant = {
@@ -18,7 +19,7 @@ export default function ExperiencePage() {
             title: "Frontend Developer – MistralTips",
             period: "2023 - 2024 ",
             description:
-                "creating a mobile app (MVP) for resturants and cafes. Collaborating with a team of developers to deliver a user-friendly experience.",
+                "Creating a mobile app (MVP) for resturants and cafes. Collaborating with a team of developers to deliver a user-friendly experience.",
         },
         {
             title: "Frontend Developer – Freelance",
@@ -35,6 +36,7 @@ export default function ExperiencePage() {
     ];
 
     return (
+
         <main className="min-h-screen text-white py-20 px-4">
             <div className="max-w-3xl mx-auto space-y-12">
                 <motion.div

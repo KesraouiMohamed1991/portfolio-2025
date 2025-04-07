@@ -1,5 +1,6 @@
 'use client';
 import { motion } from "framer-motion";
+import Transition from "../../lib/Transition";
 
 export default function AboutPage() {
   const textVariant = {
